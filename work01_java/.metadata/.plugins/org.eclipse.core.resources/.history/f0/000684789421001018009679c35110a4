@@ -1,0 +1,10 @@
+package com.self.service;
+
+import com.self.vo.parent.Book;
+
+public interface BookManager {
+	void insertBook(Book book);
+	void deleteBook(int isbn);
+	void updateBook(Book book);
+	
+}

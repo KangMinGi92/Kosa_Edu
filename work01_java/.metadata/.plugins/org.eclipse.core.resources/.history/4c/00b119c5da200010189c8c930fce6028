@@ -1,0 +1,24 @@
+package com.edu.child;
+
+import com.edu.parent.Flyer;
+
+/*class는 abstract메소드가 있으면 안된다.
+추상화 정도에 따라서 
+완전 추상화 메소드 = 
+*/
+public abstract class AirPlane implements Flyer {
+	
+	@Override
+	public void flyer() {
+		System.out.println("AirPlane flyer...");
+	}
+	
+	@Override
+	public void takeOff() {
+		System.out.println("AirPlane takeOff...");
+	}
+	
+	public abstract void land();
+
+	
+}

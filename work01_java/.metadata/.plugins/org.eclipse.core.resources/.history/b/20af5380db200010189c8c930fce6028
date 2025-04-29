@@ -1,0 +1,12 @@
+package com.edu.child.test;
+
+import com.edu.child.AirPlane;
+
+public class FlyerTest {
+
+	public static void main(String[] args) {
+//		Flyer f = new Flyer();
+		AirPlane a = new AirPlane();
+	}
+
+}

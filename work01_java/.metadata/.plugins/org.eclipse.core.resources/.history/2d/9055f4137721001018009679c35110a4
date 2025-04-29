@@ -1,0 +1,27 @@
+package com.edu.dice;
+
+import java.util.Random;
+
+public class DiceAImpl implements Dice {
+	private int value;
+
+	public DiceAImpl() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public DiceAImpl(int value) {
+		super();
+		this.value = value;
+	}
+
+	@Override
+	public int getValue() {
+		return value;
+	}
+
+	@Override
+	public void selectedNumber() {
+		value = new Random().nextInt(6) + 1;
+	}
+}

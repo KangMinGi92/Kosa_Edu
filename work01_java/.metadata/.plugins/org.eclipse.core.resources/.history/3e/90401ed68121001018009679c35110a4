@@ -1,0 +1,6 @@
+package com.self.serviceimpl;
+//강력한 Contract
+//팀원들 사이의
+public interface EmployeeService {
+	
+}

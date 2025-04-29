@@ -1,0 +1,19 @@
+package test01;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int A = sc.nextInt();
+        int B = sc.nextInt();
+        if(0<A && A<10 && 0<B && B<10) {
+        	System.out.println(A+B);
+        }
+    }
+    /*							
+     								Colletion : 가장 원시적인 방법으로 객체를 저장 (중복 o , 순서x)
+     		Set : Collection 다음으로 원시적인 방법으로 객체를 저장(중복 x, 순서 x)
+     		List : 시작점과 끝점을 가지면서 환원형으로 객체를 저장(중복 o, 순서 o)
+     */
+}

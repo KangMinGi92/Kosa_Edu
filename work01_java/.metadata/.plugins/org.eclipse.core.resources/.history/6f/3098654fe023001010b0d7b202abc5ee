@@ -1,0 +1,27 @@
+package com.edu.test;
+
+import java.util.ArrayList;
+
+import com.edu.vo.Employee;
+
+public class ArrayListTest1 {
+/*
+ 	ArrayList
+ 	List의 자식.
+ 	순서를 가지면서 객체를 저장... 중복도 가능하다.
+ 	add(),remove(),get(),set(),size(),isEmpty(),clear(),removeAll()
+ 	
+ 	이전의 배열과 같은 기능
+ 	대신에 사이즈가 알아서 늘어난다.
+ */
+	public static void main(String[] args) {
+		//알아서 10칸짜리 배열이 만들어지고.. 11명을 추가하려하면 알아서 다시 10칸이 늘어난다.
+		ArrayList<Employee> list = new ArrayList();
+		list.add(new Employee(111, "AAA", 20000.0));
+		list.add(new Employee(222, "BBB", 21000.0));
+		list.add(new Employee(333, "CCC", 22000.0));
+		list.add(new Employee(444, "DDD", 23000.0));
+		
+	}
+
+}

@@ -1,0 +1,6 @@
+package com.edu.child;
+
+public class Engineer {
+	private String tech;
+	private int bonus;
+}

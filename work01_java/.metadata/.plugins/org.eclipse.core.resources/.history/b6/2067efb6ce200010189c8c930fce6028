@@ -1,0 +1,9 @@
+package com.edu.test;
+//Static Initialization Block
+public class StaticExamTest4 {
+
+	public static void main(String[] args) {
+		System.out.println("1. main method block.....");
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.edu.test;
+ //
+public class StaticExamTest2 {
+
+	public static void main(String[] args) {
+		Member.printMember();
+		Member m = new Member();
+		m.printMember2();
+	}
+
+}

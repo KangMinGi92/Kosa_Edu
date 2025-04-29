@@ -1,0 +1,16 @@
+package com.edu.child;
+
+import com.edu.parent.Parent;
+
+public class Child extends Parent {
+	//자식만의 메소드
+	public void childAccess() {
+		System.out.println(publicField+", "+protectedField);
+		System.out.println("defaultField, pirvateField 접근할 수 없어요!!!");
+	}
+	
+	@Override
+	public void access() {
+		super.access();
+	}
+}

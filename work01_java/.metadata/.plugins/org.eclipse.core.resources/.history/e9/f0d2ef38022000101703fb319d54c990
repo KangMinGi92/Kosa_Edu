@@ -1,0 +1,84 @@
+package com.edu.test;
+
+import com.edu.child.Engineer;
+import com.edu.child.Manager;
+import com.edu.child.Secretary;
+import com.edu.parent.Employee;
+import com.edu.util.MyDate;
+
+public class PolymorphismTest3 {
+
+	public static void main(String[] args) {
+		Employee[] employees = { new Manager(111, "김관식", 34000.0, new MyDate(1975, 10, 20), "기획부"),
+				new Manager(222, "박해일", 24000.0, new MyDate(1984, 10, 20), "기획부"),
+				new Engineer(333, "아이유", 54000.0, new MyDate(1999, 1, 12), "Java", 300),
+				new Engineer(444, "James", 34000.0, new MyDate(1990, 3, 20), "Python", 200),
+				new Secretary(555, "김두식", 30000.0, new MyDate(1999, 4, 21), "James") };
+
+		/*
+		 * 1. employees 안에 저장된 직원들 중에서 Manager인 직원을 찾고 그 직원의 사원번호가 222라면 그 사원의 부서를
+		 * 교육부로변경 employees안에 저장된 직원들 중에서 Secretary인 직원을 찾아서 해당 상사를 222사번에 해당하는 상사이름으로
+		 * 변경
+		 */
+		String newBossName = "";
+		for (Employee e : employees) {
+
+			if (e instanceof Manager && e.getEmpNo() == 222) {
+				((Manager) e).changeDept("교육부");
+				newBossName = e.getName();
+			}
+		}
+		
+		for (Employee e : employees) {
+			if (e instanceof Secretary)
+				((Secretary) e).setNameOfBoss(newBossName);
+
+		}
+
+		/*
+		 * 2. employees안에 저장된 직원들의 모든 정보를 출력
+		 */
+		for (Employee e : employees) {
+			System.out.println(e);
+		}
+
+		/*
+		 * 3. Manager 부서의 모든 직원의 급여를 10%인상 Engineer 부서의 모든 직원의 보너스를 100달러 차감 Secretary
+		 * 부서의 모든 직원의 급여는 동결
+		 */
+		for (Employee e : employees) {
+			if (e instanceof Manager) {
+				e.setSalary(e.getSalary() * 1.1);
+				System.out.println(e.getName()+" 님의 급여는 10% 인상 되었습니다.");
+			}else if (e instanceof Engineer) {
+				Engineer eg = (Engineer)e;
+				int newBonus=eg.getBonus()-100;
+				if(newBonus<0) newBonus = 0;
+				eg.changeBonus(newBonus);
+				System.out.println(e.getName()+" 님의 보너스는 100달러 차감 되었습니다.");
+			}else if(e instanceof Secretary) {
+				System.out.println(e.getName()+" Secretary 부서의 모든 직원의 급여는 동결되었습니다.");
+			}
+		}
+		/*
+		 * 4. employees안에 저장된 직원들의 모든 정보를 출력
+		 */
+		System.out.println("============================================================");
+		for (Employee e : employees) {
+			System.out.println(e);
+		}
+		
+		/* Polymorphism(Poly + Morphism)
+			부모타입으로 다양한 자식객체를 만들어내는 기술
+			부모타입의 Container에 다양한 자식객체들을 담아내는 기법 
+			
+			상속을 하게되면 알아야하는 기법
+			 1) Object Casting
+			 2) Virtual Method Invocation
+			 3) instanceof
+			 1,2,3을 활용해서 Polymorphism을 구현할 수 있다.
+		 */
+		Employee e = new Manager(7369, "이서연", new MyDate(1988,12,12),50000.0,"교육부");
+	}
+
+}

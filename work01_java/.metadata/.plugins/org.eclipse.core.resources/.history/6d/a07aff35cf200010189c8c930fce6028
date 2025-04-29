@@ -1,0 +1,17 @@
+package com.edu.test;
+//Static Initialization Block
+/*
+	jvm...실행...제일 먼저 찾는 함수가 main()
+	main() 안 첫번째 코드보다 더 먼저 실행되는 분이 있다!!!!!!!!!
+	
+	클래스의 생성자(){
+		//필드 초기화
+	}
+*/
+public class StaticExamTest4 {
+	static int i=100;
+	public static void main(String[] args) {
+		System.out.println(i);
+		System.out.println("1. main method block...");
+	}
+}

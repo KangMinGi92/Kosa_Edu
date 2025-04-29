@@ -1,0 +1,5 @@
+package com.edu.dice;
+
+public interface Dice {
+
+}

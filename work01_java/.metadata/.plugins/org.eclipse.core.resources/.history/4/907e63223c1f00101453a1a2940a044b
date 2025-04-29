@@ -1,0 +1,75 @@
+package self.bank;
+
+public class BankService {
+
+	private static final int MAX_CUSTOMERS = 100;
+	private int numberOfCustomers = 0;
+	private Customer[] customers = null;
+
+	/*
+	 * SingleTone Pattern 하나의 클래스로부터 오직 하나의 인스턴스가 생성되도록 하는 패턴
+	 */
+	private static BankService service = new BankService();
+
+	private BankService() {
+		customers = new Customer[MAX_CUSTOMERS];
+	}
+
+	public static BankService getInstance() {
+		return service;
+	}
+
+	public void addCustomer(Customer customer) {
+		for (int i = numberOfCustomers; i < customers.length; i++) {
+			if (customers[i] == null) {
+				customers[i] = customer;
+				System.out.println(customer.getName() + " 님이 등록 되셨습니다.");
+				System.out.println("앞으로" + (MAX_CUSTOMERS - numberOfCustomers + 1) + " 명 남았습니다.");
+				break;
+			} else if (i == customers.length) {
+				System.out.println("더이상 등록할 수 없습니다.");
+				return;
+			}
+		}
+
+	}
+
+	public Customer getCustomer(int ssn) {
+		Customer find = null;
+		for (Customer c : customers) {
+			if (c.getSsn() == ssn) {
+				find = c;
+				break;
+			} else {
+				System.out.println("일치하는 사람이 없습니다.");
+			}
+		}
+		return find;
+	}
+
+	public void showAll() {
+		System.out.println("============전체 고객 리스트 입니다.============");
+		for (Customer c : customers) {
+			if (c == null) {
+				System.out.println("등록이 고객이 없습니다.");
+				break;
+			}
+			System.out.println(c);
+		}
+	}
+}
+/*	Inheritance
+ *	부모로부터 멤버(필드 + 메소드)를 물려받는것
+ *				+
+ *	자식은 자식만의 멤버(필드 + 메소드)를 추가 하는것
+ *				||
+ *	상속을 받게되면 자식클래스는 기능이 더 확장된다.
+ *	ex)
+ *	name,salary,birthDate
+ *	일반적인 속성으로 가지는 모듈을 하나 설정
+ *	1. 추상화,일반화 과정
+ *	2. Is a Relation ==> is a 를 붙였을때 상식적으로 말이 되는지 확인과정 필요
+ *		Manager is a Employee
+ *		Engineer is a Employee
+ *		Secretary is a Employee
+ */

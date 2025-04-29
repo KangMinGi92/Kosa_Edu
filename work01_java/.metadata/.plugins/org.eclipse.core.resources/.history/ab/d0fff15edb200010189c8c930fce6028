@@ -1,0 +1,9 @@
+package com.edu.child.test;
+
+public class FlyerTest {
+
+	public static void main(String[] args) {
+		Flyer f = new Flyer();
+	}
+
+}

@@ -1,0 +1,87 @@
+package com.kosa.service;
+
+import com.kosa.vo.Movie;
+
+public class MovieMgr {
+	private Movie[] movies = new Movie[100];
+	private int index = 0;
+
+	private static MovieMgr mgr = new MovieMgr();
+
+	private MovieMgr() {
+	}
+
+	public static MovieMgr getInstance() {
+		return mgr;
+	}
+
+	public void add(Movie m) {
+		if (index == 100) {
+			System.out.println("더이상 등록 할 수 없습니다.");
+		}
+		movies[index++] = m;
+	}
+
+	public Movie[] search() {
+		int size = getSize();
+		Movie[] temp = new Movie[size];
+		for (Movie m : movies) {
+			if (m == null) {
+				break;
+			} else {
+				temp[size++] = m;
+			}
+		}
+		return temp;
+	}
+
+	public Movie search(String title) {
+		Movie find = null;
+		for (Movie m : movies)
+			if (m.getTitle().equals(title)) {
+				find = m;
+			} else {
+				System.out.println("일치하는 영화가 없습니다.");
+			}
+		return find;
+	}
+
+	public Movie[] searchDirector(String name) {
+		int size = getSize();
+		Movie[] temp = new Movie[size];
+		for (Movie m : movies) {
+			if (m.getDirector().equals(name)) {
+				temp[index++] = m;
+			}
+		}
+		return temp;
+	}
+
+	public Movie[] searchGenre(String genre) {
+		int size = getSize();
+		Movie[] temp = new Movie[size];
+		for (Movie m : movies) {
+			if (m.getDirector().equals(genre)) {
+				temp[index++] = m;
+			}
+		}
+		return temp;
+	}
+
+	public void delete(String title) {
+		int size = getSize();
+		int sort = 0;
+		for (int i = 0; i < size; i++) {
+			if (movies[i].getTitle().equals(title)) {
+				movies[i] = movies[i + 1];
+				break;
+			} else {
+				System.out.println("일치하는 영화가 없습니다.");
+			}
+		}
+	}
+
+	public int getSize() {
+		return index;
+	}
+}

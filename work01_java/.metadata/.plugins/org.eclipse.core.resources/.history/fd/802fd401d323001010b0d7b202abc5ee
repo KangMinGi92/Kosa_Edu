@@ -1,0 +1,5 @@
+package com.edu.child;
+
+public class Child extends Parent {
+	//자식만의 메소드
+}

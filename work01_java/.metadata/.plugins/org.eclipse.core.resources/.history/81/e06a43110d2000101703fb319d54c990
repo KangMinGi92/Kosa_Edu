@@ -1,0 +1,16 @@
+package com.self.vo.child;
+
+import com.self.util.MyDate;
+import com.self.vo.parent.Employee;
+
+public class Engineer extends Employee {
+	private String tech;
+	private int bonus;
+
+	public Engineer(int empno, String name, int salary, int annualLeave, MyDate myDate, String tech, int bonus) {
+		super(empno, name, salary, annualLeave, myDate);
+		this.tech = tech;
+		this.bonus = bonus;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.self.serviceimpl;
+
+public interface EmployeeService {
+	
+}

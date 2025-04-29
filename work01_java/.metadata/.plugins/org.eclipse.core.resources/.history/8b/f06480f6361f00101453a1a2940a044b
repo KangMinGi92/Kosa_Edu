@@ -1,0 +1,55 @@
+package self.bank;
+
+public class BankService {
+
+	private static final int MAX_CUSTOMERS = 100;
+	private int numberOfCustomers = 0;
+	private Customer[] customers = null;
+	
+	/*
+	 	SingleTone Pattern
+	 	
+	 */
+	private static BankService service = new BankService(MAX_CUSTOMERS);
+
+	private BankService(int MAX_CUSTOMERS) {
+		customers = new Customer[MAX_CUSTOMERS];
+	}
+
+	public static BankService getInstance() {
+		return service;
+	}
+
+	public void addCustomer(Customer customer) {
+		for (int i = numberOfCustomers; i < customers.length; i++) {
+			if (customers[i] == null) {
+				customers[i] = customer;
+				break;
+			}else if(i==customers.length) {
+				System.out.println("더이상 등록할 수 없습니다.");
+			}
+		}
+
+	}
+
+	public Customer getCustomer(int ssn) {
+		Customer find = null;
+		for (Customer c : customers) {
+			if (c.getSsn() == ssn) {
+				find = c;
+				return find;
+			} else {
+				System.out.println("일치하는 사람이 없습니다.");
+			}
+		}
+		return find;
+	}
+
+	public void showAll() {
+		System.out.println("============전체 고객 리스트 입니다.============");
+		for (Customer c : customers) {
+			if (c != null)
+				System.out.println(c);
+		}
+	}
+}

@@ -1,0 +1,29 @@
+package com.edu.child;
+
+import com.edu.parent.Employee;
+import com.edu.util.MyDate;
+
+public class Manager extends Employee {
+	private String dept;
+
+	// this.. 이 클래스 자기자신을 가리키는 키워드
+	// super... 부모를 가리키는 키워드
+	public Manager(String name, double salary, MyDate birthDate, String dept) {
+		super(name, salary, birthDate);
+		this.dept = dept;
+	}
+	/*
+	 * Manager 객체 생성 --> 생성자 동작 자식이 생성될려고 할때 무조건 부모가 먼저 생성되려고 한다!!!
+	 * Manager(){
+	 * 		super()
+	 * }
+	 */
+	
+	//부모가 가진 기능을 물려받고 + 그걸 자식에게 맞게 고쳐 쓴다.
+	//Method Overriding ==> Method의 선언부는 부모랑 일치하고 구현부가 다른 기법을 말한다.
+	//상속은 부모가 물려준 필드를 자식은 접근해서 사용하고 메소드는 자식이 재정의 해서 사용한다.
+	@Override
+	public String toString() {
+		return super.toString()+" , Dept="+dept;
+	}
+}

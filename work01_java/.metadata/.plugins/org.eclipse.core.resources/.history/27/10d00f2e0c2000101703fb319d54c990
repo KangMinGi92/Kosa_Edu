@@ -1,0 +1,6 @@
+package com.self.vo;
+
+public class Manager extends Employee{
+	private int deptno;
+	private String dept;
+}

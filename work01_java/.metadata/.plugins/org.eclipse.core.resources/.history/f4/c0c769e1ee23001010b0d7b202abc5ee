@@ -1,0 +1,18 @@
+package com.edu.test;
+
+import java.util.ArrayList;
+
+import com.edu.vo.Employee;
+
+public class SortTest2 {
+	public static void main(String[] args) {
+		//순서, 정렬
+		ArrayList<Employee> list = new ArrayList();
+		list.add(new Employee(888, "AAA", 20000.0));
+		list.add(new Employee(222, "BBB", 21000.0));
+		list.add(new Employee(111, "CCC", 22000.0));
+		list.add(new Employee(444, "CCC", 23000.0));
+		
+	}
+
+}

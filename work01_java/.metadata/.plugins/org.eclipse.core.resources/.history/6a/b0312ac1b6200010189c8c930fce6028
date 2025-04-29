@@ -1,0 +1,9 @@
+package com.edu.test;
+ //6. static 키워드는 final과 같이 사용되는 경우가 많다.
+public class StaticExamTest2 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

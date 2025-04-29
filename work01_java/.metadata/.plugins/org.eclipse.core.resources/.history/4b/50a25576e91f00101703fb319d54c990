@@ -1,0 +1,21 @@
+package com.edu.test;
+
+import com.edu.child.Engineer;
+import com.edu.child.Manager;
+import com.edu.child.Secretary;
+import com.edu.parent.Employee;
+import com.edu.util.MyDate;
+public class PolymorphismTest2 {
+
+	public static void main(String[] args) {
+		Employee[] employees = { 
+				new Manager(111, "김관식", 34000.0, new MyDate(1975, 10, 20), "기획부"),
+				new Manager(222, "박해일", 24000.0, new MyDate(1984, 10, 20), "기획부"),
+				new Engineer(333, "아이유", 54000.0, new MyDate(1999, 1, 12), "Java", 300),
+				new Engineer(444, "James", 34000.0, new MyDate(1990, 3, 20), "Python", 200),
+				new Secretary(555, "김두식", 30000.0, new MyDate(1999, 4, 21), "James") 
+		};
+		
+	}
+
+}

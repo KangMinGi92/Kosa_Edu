@@ -1,0 +1,72 @@
+package com.edu.parent;
+
+import com.edu.util.MyDate;
+
+/*	Inheritance
+ *	부모로부터 멤버(필드 + 메소드)를 물려받는것
+ *				+
+ *	자식은 자식만의 멤버(필드 + 메소드)를 추가 하는것
+ *				||
+ *	상속을 받게되면 자식클래스는 기능이 더 확장된다.
+ *	ex)
+ *	name,salary,birthDate
+ *	일반적인 속성으로 가지는 모듈을 하나 설정
+ *	1. 추상화,일반화 과정
+ *	2. Is a Relation ==> is a 를 붙였을때 상식적으로 말이 되는지 확인과정 필요
+ *		Manager is a Employee
+ *		Engineer is a Employee
+ *		Secretary is a Employee
+ *	부모클래스(Parent, Super) 자식클래스(Child, Sub)
+ *
+ *	class Employee{
+ *		String name;
+ *		double salary;
+ *		MyDate birthDate;
+ *	}
+ *	class Manager extends Employee {
+ *		String dept;
+ *	}
+ *	
+ *	상속에서의 메모리Allocation
+ *	부모가 생성될때 자식을 가지고 생성한다.(즉, 주소값이 같다)
+ */
+//Parent Class....
+public class Employee {
+	private int empNo;
+	private String name;
+	private double salary;
+	private MyDate birthDate;
+
+//	public Employee() {}
+
+	public Employee(int empNo, String name, double salary, MyDate birthDate) {
+		this.empNo = empNo;
+		this.name = name;
+		this.salary = salary;
+		this.birthDate = birthDate;
+	}
+
+	public int getEmpNo() {
+		return empNo;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public MyDate getBirthDate() {
+		return birthDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [empNo=" + empNo + ", name=" + name + ", salary=" + salary + ", birthDate=" + birthDate + "]";
+	}
+
+
+
+}

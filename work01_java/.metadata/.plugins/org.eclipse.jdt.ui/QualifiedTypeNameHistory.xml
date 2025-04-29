@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.edu.oop.Greeting"/>
+    <fullyQualifiedTypeName name="com.edu.oop.NoteBook"/>
+    <fullyQualifiedTypeName name="java.util.Calendar"/>
+    <fullyQualifiedTypeName name="com.edu.service.Writer"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.edu.vo.Customer"/>
+    <fullyQualifiedTypeName name="com.edu.test.OuletServiceTest"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.edu.vo.Apartment"/>
+    <fullyQualifiedTypeName name="com.edu.vo.SalesMan"/>
+    <fullyQualifiedTypeName name="com.edu.service.HRService"/>
+    <fullyQualifiedTypeName name="com.edu.child.Manager"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayStoreException"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.self.vo.child.Engineer"/>
+    <fullyQualifiedTypeName name="com.self.vo.child.Manager"/>
+    <fullyQualifiedTypeName name="com.edu.test.Member"/>
+    <fullyQualifiedTypeName name="com.self.vo.child.Novel"/>
+    <fullyQualifiedTypeName name="com.self.service.BookManagerImpl"/>
+    <fullyQualifiedTypeName name="com.self.vo.parent.Book"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+</qualifiedTypeNameHistroy>

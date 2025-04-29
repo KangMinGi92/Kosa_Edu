@@ -1,0 +1,20 @@
+package com.edu.child;
+
+import com.edu.parent.Flyer;
+
+public class AirPlane implements Flyer {
+	@Override
+	public void flyer() {
+		System.out.println("AirPlane flyer...");
+	}
+
+	@Override
+	public void land() {
+
+	}
+
+	@Override
+	public void takeOff() {
+
+	}
+}

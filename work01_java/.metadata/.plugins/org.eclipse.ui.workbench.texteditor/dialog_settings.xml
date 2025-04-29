@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="966"/>
+		<item key="DIALOG_Y_ORIGIN" value="574"/>
+	</section>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="false"/>
+		<list key="findhistory">
+			<item value="toString()"/>
+			<item value="toString"/>
+			<item value="diceA"/>
+			<item value="myDate"/>
+			<item value="mainSkill"/>
+			<item value="Customer"/>
+			<item value="Product"/>
+			<item value="Person"/>
+			<item value="abs"/>
+			<item value="absol"/>
+			<item value="ab"/>
+			<item value="random"/>
+			<item value="parseInt(String s"/>
+			<item value="parseInt(String s)"/>
+			<item value="parseInt"/>
+		</list>
+		<list key="replacehistory">
+			<item value="dice"/>
+			<item value="birthDate"/>
+			<item value="bonus"/>
+			<item value="Realtor"/>
+			<item value="Apartment"/>
+		</list>
+	</section>
+</section>

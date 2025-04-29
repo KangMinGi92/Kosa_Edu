@@ -1,0 +1,6 @@
+package com.self.vo;
+
+public class Employee {
+	private int empno;
+	private String name;
+}

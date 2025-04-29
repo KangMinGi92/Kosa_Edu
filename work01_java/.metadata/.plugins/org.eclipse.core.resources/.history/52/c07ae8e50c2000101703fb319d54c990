@@ -1,0 +1,6 @@
+package com.self.vo;
+
+public class Engineer extends Employee{
+	private String tech;
+	private int bonus;
+}

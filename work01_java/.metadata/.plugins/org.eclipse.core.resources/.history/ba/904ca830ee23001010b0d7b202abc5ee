@@ -1,0 +1,7 @@
+package com.edu.test;
+
+public class SortTest2 {
+	public static void main(String[] args) {
+	}
+
+}

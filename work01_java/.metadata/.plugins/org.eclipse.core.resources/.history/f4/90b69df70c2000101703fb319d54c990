@@ -1,0 +1,73 @@
+package com.self.vo;
+
+import com.self.util.MyDate;
+
+public class Employee {
+	private int empno;
+	private String name;
+	private int salary;
+	private int annualLeave;
+	private MyDate myDate;
+	
+	public Employee() {
+	}
+
+	public Employee(int empno, String name, int salary, int annualLeave, MyDate myDate) {
+		super();
+		this.empno = empno;
+		this.name = name;
+		this.salary = salary;
+		this.annualLeave = annualLeave;
+		this.myDate = myDate;
+	}
+
+	public int getEmpno() {
+		return empno;
+	}
+
+	public void setEmpno(int empno) {
+		this.empno = empno;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	public int getAnnualLeave() {
+		return annualLeave;
+	}
+
+	public void setAnnualLeave(int annualLeave) {
+		this.annualLeave = annualLeave;
+	}
+
+	public MyDate getMyDate() {
+		return myDate;
+	}
+
+	public void setMyDate(MyDate myDate) {
+		this.myDate = myDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [empno=" + empno + ", name=" + name + ", salary=" + salary + ", annualLeave=" + annualLeave
+				+ ", myDate=" + myDate + "]";
+	}
+
+
+	
+	
+}

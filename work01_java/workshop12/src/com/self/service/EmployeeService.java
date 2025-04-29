@@ -1,0 +1,85 @@
+package com.self.service;
+
+import com.self.vo.child.Designer;
+import com.self.vo.child.Engineer;
+import com.self.vo.child.Manager;
+import com.self.vo.parent.Employee;
+
+public class EmployeeService {
+	private int eIdx = 0;
+	Employee[] employees = new Employee[100];
+
+	private static final EmployeeService service = new EmployeeService();
+
+	private EmployeeService() {
+	}
+
+	public static final EmployeeService getInstance() {
+		return service;
+	}
+	
+	//1. employee 추가하는 기능
+	public void addEmployee(Employee employee) {
+		employees[eIdx++] = employee;
+		System.out.println(employee.getName()+" 님의 정보가 등록 되었습니다.");
+	}
+	
+	//2. employee Type 별로 업데이트를 다르게 하는 기능
+	public void updateEmployee(Employee employee, String updateValue) {
+
+		if (employee instanceof Manager) {
+			((Manager) employee).setDept(updateValue);
+			System.out.println(employee.getName()+" 님의 업데이트를 성공하였습니다.");
+		} else if (employee instanceof Engineer) {
+			((Engineer) employee).setTech(updateValue);
+			System.out.println(employee.getName()+" 님의 업데이트를 성공하였습니다.");
+		} else if (employee instanceof Designer) {
+			((Designer) employee).setSkill(updateValue);
+			System.out.println(employee.getName()+" 님의 업데이트를 성공하였습니다.");
+		}
+	}
+	
+	//3. employee 삭제하는 기능
+	public void deleteEmployee(int empno) {
+		int num = 0;
+		for (int i = 0; i < eIdx; i++) {
+			if (empno == employees[i].getEmpno()) {
+				num = i;
+				System.out.println(employees[i].getName() + " 님의 정보가 삭제되었습니다.");
+				break;
+			}
+		}
+		for (int j = num; j < eIdx; j++) {
+			employees[j] = employees[j + 1];
+		}
+		eIdx--;
+	}
+	
+	//4. employee 전체를 조회하는 기능
+	public Employee[] findAllEmployee() {
+		return employees;
+	}
+	
+	//5. 특정 employee 조회하는 기능
+	public Employee findEmployee(int empno) {
+		Employee temp = null;
+		for (Employee e : employees)
+			if (e != null && e.getEmpno() == empno) {
+				temp = e;
+				break;
+			}
+		return temp;
+	}
+	
+	//6. employee 연차를 사용하면 차감하는 기능
+	public void useAnnualLeave(Employee employee,int num) {
+		int remaining=employee.getAnnualLeave();
+			if(remaining>0) {
+				remaining-=num;
+				employee.setAnnualLeave(remaining);
+				System.out.println(employee.getName()+"님의 연차신청이 정상처리 됐습니다.");
+				System.out.println("남은 연차는 "+remaining+"개 입니다.");
+		}
+	}
+	
+}

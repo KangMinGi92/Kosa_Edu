@@ -1,0 +1,17 @@
+package com.edu.child;
+
+public class Secretary {
+	private String nameOfBoss;
+	public Secretary() {
+	}
+	public String getNameOfBoss() {
+		return nameOfBoss;
+	}
+
+	public void setNameOfBoss(String nameOfBoss) {
+		this.nameOfBoss = nameOfBoss;
+	}
+	
+	
+	
+}

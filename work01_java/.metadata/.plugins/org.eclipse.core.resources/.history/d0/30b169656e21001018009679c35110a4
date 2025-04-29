@@ -1,0 +1,41 @@
+package com.edu.child.test;
+
+import com.edu.child.Bird;
+import com.edu.child.SuperMan;
+import com.edu.parent.Flyer;
+
+public class FlyerTest {
+
+	public static void main(String[] args) {
+//		Flyer f = new Flyer();//인터페이스라서 객체를 생성할 수 없다.
+//		AirPlane a = new AirPlane(); //추상클래스라서 객체를 생성할 수 없다.
+//		SuperMan man = new SuperMan(); //일반클래스라서 객체를 생성할 수 있다.
+		//Polymorphism
+		Flyer[ ] flies = {
+				new Bird(),new SuperMan(), new Bird()
+		};
+		
+		for(Flyer f : flies) {
+			f.flyer();
+			f.takeOff();
+			f.land();
+			System.out.println("---------------------------------");
+		}
+		
+		/*
+		 	for문 돌면서
+		 	Bird라면 layEggs()
+		 	SuperMan이라면 stopBullet
+		 */
+		for(Flyer f : flies) {
+			if(f instanceof Bird) {
+				System.out.println(((Bird) f).layEggs());
+			}else if (f instanceof SuperMan) {
+				System.out.println(((SuperMan) f).stopBullet());
+			}
+		}
+		Flyer[] fliyes = new Flyer[4];
+		
+	}
+
+}

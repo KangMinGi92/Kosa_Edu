@@ -1,0 +1,12 @@
+package com.self.vo;
+
+public class Employee {
+	private int empno;
+	private String name;
+	private int salary;
+	private int annualLeave;
+	private MyDate myDate;
+	
+	public Employee() {
+	}
+}

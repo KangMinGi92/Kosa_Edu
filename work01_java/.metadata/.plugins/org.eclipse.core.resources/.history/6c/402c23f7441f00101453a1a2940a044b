@@ -1,0 +1,17 @@
+package com.edu.child;
+
+import com.edu.parent.Employee;
+import com.edu.util.MyDate;
+
+public class Manager extends Employee {
+	private String dept;
+
+	//this.. 이 클래스 자기자신을 가리키는 키워드
+	//super... 부모를 가리키는 키워드
+	public Manager(String name, double salary, MyDate birthDate, String dept) {
+		super(name,salary,birthDate);
+		this.dept = dept;
+	}
+		Manager 객체 생성 --> 생성자 동작
+		자식이 생성될려고 할때 무조건 부모가 먼저 생성되려고 한다!!!
+}

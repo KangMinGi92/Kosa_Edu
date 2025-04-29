@@ -1,0 +1,13 @@
+package com.self.vo.child;
+
+import com.self.vo.parent.Book;
+
+public class Manazine extends Book {
+	private int month;
+
+	public Manazine(int isbn, String title, String author, String publisher, double price) {
+		super(isbn, title, author, publisher, price);
+	}
+	
+	
+}

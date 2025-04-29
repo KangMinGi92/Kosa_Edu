@@ -1,0 +1,16 @@
+package com.edu.test;
+
+import java.util.ArrayList;
+
+import com.edu.vo.Employee;
+
+public class SortTest2 {
+	public static void main(String[] args) {
+		ArrayList<Employee> list = new ArrayList();
+		list.add(new Employee(111, "AAA", 20000.0));
+		list.add(new Employee(222, "BBB", 21000.0));
+		list.add(new Employee(333, "CCC", 22000.0));
+		list.add(new Employee(444, "DDD", 23000.0));
+	}
+
+}

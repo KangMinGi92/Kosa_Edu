@@ -1,0 +1,21 @@
+package com.edu.parent;
+/*	
+ 	인터페이스의 구성요소
+ 	1) public abstract method
+ 	2) public static final 상수값
+ 	
+ 	날으는 것과 관련된 기능의 Template
+ 	추상메소드들의 집합...
+ 	
+ 	필드가 없다.
+ 	
+ 	public static final 상수값은 존재
+ */
+public interface Flyer {
+	int MAX_SPEED = 250; // public static final이 무조건 자동으로 앞에 붙는다.
+	
+	void flyer();//public abstract가 자동으로 붙게된다.
+	public abstract void takeOff();
+	void land();
+	
+}

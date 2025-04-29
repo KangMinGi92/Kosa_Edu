@@ -1,0 +1,9 @@
+package com.edu.parent;
+/*
+ 	날으는 것과 관련된 기능의 Template
+ 	추상메소드들의 집합...
+ */
+public interface Flyer {
+	public void flyer();
+	
+}

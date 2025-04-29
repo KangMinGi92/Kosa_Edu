@@ -1,0 +1,37 @@
+package com.self.vo;
+
+import com.self.util.MyDate;
+
+public class Manager extends Employee {
+	private int deptno;
+	private String dept;
+
+	public Manager(int empno, String name, int salary, int annualLeave, MyDate myDate, int deptno, String dept) {
+		super(empno, name, salary, annualLeave, myDate);
+		this.deptno = deptno;
+		this.dept = dept;
+	}
+
+	public int getDeptno() {
+		return deptno;
+	}
+
+	public void setDeptno(int deptno) {
+		this.deptno = deptno;
+	}
+
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + deptno + ", dept=" + dept + "]";
+	}
+	
+
+}

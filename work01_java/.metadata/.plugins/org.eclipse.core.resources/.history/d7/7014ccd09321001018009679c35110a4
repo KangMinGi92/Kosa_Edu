@@ -1,0 +1,27 @@
+package com.self.vo.child;
+
+import com.self.vo.parent.Book;
+
+public class Manazine extends Book {
+	private int month;
+
+	public Manazine(int isbn, String title, String author, String publisher, double price,int month) {
+		super(isbn, title, author, publisher, price);
+		this.month = month;
+	}
+
+	public int getMonth() {
+		return month;
+	}
+
+	public void setMonth(int month) {
+		this.month = month;
+	}
+
+	@Override
+	public String toString() {
+		return super().toString()+"month=" + month + "]";
+	}
+	
+	
+}

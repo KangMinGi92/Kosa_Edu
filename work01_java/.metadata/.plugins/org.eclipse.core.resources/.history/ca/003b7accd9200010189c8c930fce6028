@@ -1,0 +1,23 @@
+package com.edu.child;
+
+import com.edu.parent.Flyer;
+
+public class AirPlane implements Flyer {
+	@Override
+	public void flyer() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void land() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void takeOff() {
+		// TODO Auto-generated method stub
+
+	}
+}

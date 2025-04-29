@@ -1,0 +1,7 @@
+package com.self.vo.child;
+
+public class Designer {
+	private String skill;
+	private String designArea;
+	
+}

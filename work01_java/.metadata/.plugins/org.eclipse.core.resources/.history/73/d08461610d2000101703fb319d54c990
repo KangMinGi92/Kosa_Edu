@@ -1,0 +1,16 @@
+package com.self.vo.child;
+
+import com.self.util.MyDate;
+
+public class Designer {
+	private String skill;
+	private String designArea;
+	public Designer(int empno, String name, int salary, int annualLeave, MyDate myDate,String skill, String designArea) {
+		super(empno, name, salary, annualLeave, myDate);
+		this.skill = skill;
+		this.designArea = designArea;
+	}
+	
+	
+	
+}

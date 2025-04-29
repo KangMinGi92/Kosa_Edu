@@ -1,0 +1,9 @@
+package com.edu.test;
+
+public class InheritanceTest1 {
+
+	public static void main(String[] args) {
+		Manager m1 = new Manager("James",450000.0,new MyDate(1990, 10, 10),"IT")
+	}
+
+}

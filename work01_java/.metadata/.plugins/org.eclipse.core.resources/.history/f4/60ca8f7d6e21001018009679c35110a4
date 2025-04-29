@@ -1,0 +1,44 @@
+package com.edu.child.test;
+
+import com.edu.child.Bird;
+import com.edu.child.SuperMan;
+import com.edu.parent.Flyer;
+
+public class FlyerTest {
+
+	public static void main(String[] args) {
+//		Flyer f = new Flyer();//인터페이스라서 객체를 생성할 수 없다.
+//		AirPlane a = new AirPlane(); //추상클래스라서 객체를 생성할 수 없다.
+//		SuperMan man = new SuperMan(); //일반클래스라서 객체를 생성할 수 있다.
+		//Polymorphism
+		
+		Flyer[] fliyes = new Flyer[4]; // interface 는 new라는 연산자로 생성할 수 없지만 배열은 일반객체랑 다르기때문에 사용가능하다.
+		Flyer arr = new Flyer(); // interface는 추상메소드를 모아놓은 집합으로 new라는 연산자로 객체를 생성할 수 없다.
+		Flyer[ ] flies = {
+				new Bird(),new SuperMan(), new Bird()
+		};
+		
+		for(Flyer f : flies) {
+			f.flyer();
+			f.takeOff();
+			f.land();
+			System.out.println("---------------------------------");
+		}
+		
+		/*
+		 	for문 돌면서
+		 	Bird라면 layEggs()
+		 	SuperMan이라면 stopBullet
+		 */
+		for(Flyer f : flies) {
+			if(f instanceof Bird) {
+				System.out.println(((Bird) f).layEggs());
+			}else if (f instanceof SuperMan) {
+				System.out.println(((SuperMan) f).stopBullet());
+			}
+		}
+		
+		
+	}
+
+}

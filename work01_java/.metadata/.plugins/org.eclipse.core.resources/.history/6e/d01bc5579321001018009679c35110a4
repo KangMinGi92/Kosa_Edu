@@ -1,0 +1,13 @@
+package com.self.vo.parent;
+
+public class Book {
+	private int isbn;
+	private String title;
+	private String author;
+	private String publisher;
+	private double price;
+	
+	public Book(int isbn) {
+	}
+	
+}

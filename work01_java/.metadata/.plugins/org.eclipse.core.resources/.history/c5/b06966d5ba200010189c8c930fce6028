@@ -1,0 +1,9 @@
+package com.edu.test;
+//7. static한 변수는 생성된 객체들에서 공유한다.!!!!!!!!!
+public class StaticExamTest3 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

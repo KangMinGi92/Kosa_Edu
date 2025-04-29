@@ -1,0 +1,9 @@
+package com.edu.dice;
+
+/*
+ 	Dice A, Dice B, DiceC클래스의 핵심기능의 Template
+ */
+public interface Dice {
+	int getValue();
+	public void selectedNumber();
+}

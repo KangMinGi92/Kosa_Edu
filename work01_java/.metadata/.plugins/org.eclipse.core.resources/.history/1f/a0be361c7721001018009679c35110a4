@@ -1,0 +1,25 @@
+package com.edu.dice;
+
+import java.util.Random;
+
+public class DiceAImpl implements Dice {
+	private int value;
+
+	public DiceAImpl() {
+	}
+
+	public DiceAImpl(int value) {
+		this.value = value;
+		System.out.println("::"+getClass().getName()+" 생성자....");
+	}
+
+	@Override
+	public int getValue() {
+		return value;
+	}
+
+	@Override
+	public void selectedNumber() {
+		value = new Random().nextInt(6) + 1;
+	}
+}

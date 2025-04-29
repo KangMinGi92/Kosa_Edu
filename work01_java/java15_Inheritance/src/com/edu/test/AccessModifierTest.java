@@ -1,0 +1,19 @@
+package com.edu.test;
+
+import com.edu.child.Child;
+
+public class AccessModifierTest {
+
+	public static void main(String[] args) {
+		// 1. Child 클래스 객체를 생성
+		Child c = new Child();
+		
+		// 2. childAccess(); 호출
+		c.childAccess();
+		
+		// 3. access(); 호출
+		System.out.println("====================");
+		c.access();
+	}
+
+}

@@ -1,0 +1,6 @@
+package com.self.service;
+
+public interface BookManager {
+	void insertBook(Book book);
+	
+}

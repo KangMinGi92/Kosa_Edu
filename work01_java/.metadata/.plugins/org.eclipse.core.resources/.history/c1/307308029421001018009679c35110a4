@@ -1,0 +1,9 @@
+package com.self.vo.child;
+
+import com.self.vo.parent.Book;
+
+public class Novel extends Book{
+	private String genre;
+	
+	
+}

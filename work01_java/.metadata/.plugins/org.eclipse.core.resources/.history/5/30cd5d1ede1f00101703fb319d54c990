@@ -1,0 +1,26 @@
+package com.edu.child;
+
+import com.edu.parent.Employee;
+import com.edu.util.MyDate;
+
+public class Secretary extends Employee{
+	private String nameOfBoss;
+	public Secretary(int empno, String name, double salary, MyDate birthDate, String tecnameOfBossh) {
+		super(empno, name, salary, birthDate);
+		this.nameOfBoss = tecnameOfBossh;
+	}
+	public String getNameOfBoss() {
+		return nameOfBoss;
+	}
+
+	public void setNameOfBoss(String nameOfBoss) {
+		this.nameOfBoss = nameOfBoss;
+	}
+	@Override
+	public String toString() {
+		return "super.toString()" + "nameOfBoss=" + nameOfBoss;
+	}
+	
+	
+	
+}

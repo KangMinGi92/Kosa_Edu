@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.edu.repactoring.test","l":"GameTest"},{"p":"com.edu.repactoring.test","l":"GameTest2"},{"p":"com.edu.repactoring","l":"Player"}];updateSearchResults();

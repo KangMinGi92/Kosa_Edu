@@ -1,0 +1,49 @@
+package com.edu.test;
+
+/*
+ * 배열관련된 유용한 기능을 가지고 있는 클래스
+ * Arrays.copyOf()
+ * Arrays.toString(배열)
+ * System.arraycopy(source, o target, 0, length)
+ */
+import java.util.Arrays;
+
+import com.edu.child.Engineer;
+import com.edu.child.Manager;
+import com.edu.child.Secretary;
+import com.edu.parent.Employee;
+import com.edu.util.MyDate;
+
+public class PolymorphismTest2 {
+
+	public static void main(String[] args) {
+		Employee[] employees = { new Manager(111, "김관식", 34000.0, new MyDate(1975, 10, 20), "기획부"),
+				new Manager(222, "박해일", 24000.0, new MyDate(1984, 10, 20), "기획부"),
+				new Engineer(333, "아이유", 54000.0, new MyDate(1999, 1, 12), "Java", 300),
+				new Engineer(444, "James", 34000.0, new MyDate(1990, 3, 20), "Python", 200),
+				new Secretary(555, "김두식", 30000.0, new MyDate(1999, 4, 21), "James") };
+		System.out.println("===========Employee Information==============");
+//		for(Employee e : employees)
+//			System.out.println(e);
+		// 배열안에 들어있는 데이터들의 정보를 문자열로 출력
+		System.out.println(Arrays.toString(employees));
+
+		System.out.println("===========Employee's AnnualSalary X==============");
+		int annualSalary = 0;
+		for(Employee e : employees) 
+			annualSalary +=(e.getSalary()*12);	//Engineer는 보너스가 연봉에 포함되야하므로 잘못된 계산 방법
+		System.out.println("Employees All Cost =>"+annualSalary+" !!");
+		
+		
+		System.out.println("===========Employee's AnnualSalary O==============");
+		int total = 0;
+		for(Employee e : employees) {
+			if(e instanceof Engineer)
+				total += (int)(e.getSalary()*12)+((Engineer)e).getBonus();
+			else
+				total += (int)(e.getSalary()*12);
+				
+		}
+	}
+
+}

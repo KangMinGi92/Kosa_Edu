@@ -1,0 +1,194 @@
+package com.self.service;
+
+import com.self.vo.child.Magazine;
+import com.self.vo.child.Novel;
+import com.self.vo.parent.Book;
+
+public class BookManagerImpl implements BookManager {
+	private int numberOfBook = 0; //총 입고된 책의 수량
+	private int deleteCount=0;
+	private int idx = 0;
+	private Book[] books = null;
+
+	private final int MAX_SIZE = 100;
+
+	private static final BookManagerImpl bookManagerImpl = new BookManagerImpl();
+
+	private BookManagerImpl() {
+		books = new Book[MAX_SIZE];
+	}
+
+	public static final BookManagerImpl getInstance() {
+		return bookManagerImpl;
+	}
+
+	@Override
+	public void insertBook(Book book) {
+		if (idx != MAX_SIZE) {
+			books[idx++] = book;
+			numberOfBook++;
+		} else {
+			System.out.println("더이상 등록 하실수 없습니다.");
+			return;
+		}
+	}
+
+	@Override
+	public void deleteBook(int isbn) {
+		int target = -1;
+		for (int i = 0; i < idx; i++) {
+			if (books[i].getIsbn() == isbn) {
+				target = i;
+				deleteCount++;
+				break;
+			} else {
+				System.out.println("등록되지 않은 책입니다.");
+			}
+		}
+		for (int j = target; j < idx; j++) {
+			books[j] = books[j + 1];
+		}
+		idx--;
+	}
+
+	@Override
+	public void updateBook(Book book) {
+		/* 향상된 for 는 객체에 직접 접근하는게아니라 객체에 있는 값을 가져오기 때문에 값수정이 안된다.
+		 	// b라는 객체의 setXxx()기능을 사용해서 접근해야한다.
+		for (Book b : books) {
+			if (b == null)
+				break;
+			if (b.getIsbn() == book.getIsbn()) {
+				if(b instanceof Magazine) b = (Magazine)book;
+				else if(b instanceof Novel) b = (Novel)book;
+			} 
+		*/
+		int count=0;
+		for (Book b : books) {
+			if (b == null)
+				break;
+			if (b.getIsbn() == book.getIsbn()) {
+				if(b instanceof Magazine) b = (Magazine)book;
+				else if(b instanceof Novel) b = (Novel)book;
+			} 
+		}
+		for (int i=0;i<idx;i++) {
+			if (books[i] == null)
+				break;
+			if (books[i].getIsbn() == book.getIsbn()) {
+				if(books[i] instanceof Magazine) books[i] = (Magazine)book;
+				else if(books[i] instanceof Novel) books[i] = (Novel)book;
+			} 
+		}
+//			if (b.getIsbn() == book.getIsbn()) {
+//				b.setTitle(book.getTitle());
+//				b.setAuthor(book.getAuthor());
+//				b.setPublisher(book.getPublisher());
+//				b.setPrice(book.getPrice());
+//
+//				if (book instanceof Magazine) {
+//					((Magazine) b).setMonth(((Magazine) book).getMonth());
+//				} else if (book instanceof Novel) {
+//					((Novel) b).setGenre(((Novel) book).getGenre());
+//				}
+//			}
+//			
+//		}
+//	}
+
+	@Override
+	public Book getBook(int isnb) {
+		Book result = null;
+		for (Book b : books) {
+			if (b.getIsbn() == isnb) {
+				result = b;
+				break;
+			}
+		}
+		return result;
+	}
+
+	@Override
+	public Book[] getAllBook() {
+		Book[] result = new Book[idx];
+		System.arraycopy(books, 0, result, 0, idx);
+		return result;
+	}
+
+	@Override
+	public int getNumberOfBooks() {
+		return numberOfBook;
+	}
+
+	@Override
+	public Book[] searchBookByTitle(String title) {
+		Book[] result = new Book[idx];
+		int count = 0;
+		for (Book b : books) {
+			if (b == null)
+				break;
+			if (b.getTitle().equals(title))
+				result[count++] = b;
+		}
+		Book[] last = new Book[count];
+		System.arraycopy(result, 0, last, 0, count);
+		return last;
+	}
+
+	@Override
+	public Book[] searchBookByPrice(int min, int max) {
+		Book[] result = new Book[idx];
+		int count = 0;
+		for (Book b : books) {
+			if (b != null && min <= (int) b.getPrice() && (int) b.getPrice() <= max)
+				result[count++] = b;
+		}
+		Book[] last = new Book[count];
+		System.arraycopy(result, 0, last, 0, count);
+		return last;
+	}
+
+	@Override
+	public double getSumPriceOfBooks() {
+		double sum = 0;
+		for (Book b : books) {
+			if (b != null)
+				sum += b.getPrice();
+		}
+		return sum;
+	}
+
+	@Override
+	public double getAvgPriceOfBooks() {
+		return getSumPriceOfBooks() / (numberOfBook-deleteCount);
+	}
+
+	@Override
+	public Book[] groupBook(String genre) {
+		Book[] result = new Book[idx];
+		int count = 0;
+		for (Book b : books) {
+			if (b == null)
+				break;
+			if (b instanceof Novel && ((Novel) b).getGenre().equals(genre)) {
+				result[count++] = b;
+			}
+		}
+		Book[] last = new Book[count];
+		System.arraycopy(result, 0, last, 0, count);
+		return last;
+	}
+
+	@Override
+	public Book[] monthlyBook(int month) {
+		Book[] result = new Book[idx];
+		int count = 0;
+		for (Book b : books) {
+			if (b instanceof Magazine && ((Magazine) b).getMonth() == month)
+				result[count++] = b;
+		}
+		Book[] last = new Book[count];
+		System.arraycopy(result, 0, last, 0, count);
+		return last;
+	}
+}

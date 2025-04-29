@@ -1,0 +1,8 @@
+package com.edu.parent;
+/*
+ 	날으는 것과 관련된 기능의 Template
+ */
+public interface Flyer {
+	public void flyer();
+	
+}
