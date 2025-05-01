@@ -2,7 +2,7 @@ package com.edu.test;
 
 import java.util.HashMap;
 import java.util.Map;
-//Set 중복을 허용하지 않기(Unique)때문에 보통 Map 의 key값을 담아내는 그릇으로 활용한다.
+
 /*
  	put(key, value)
  	remove(key)
@@ -23,8 +23,6 @@ public class HashMapTest5 {
 		map.put("강호동", 88);
 		map.put("김영철", 98);
 		map.put("김희철", 80);
-
-		
 		
 		
 		System.out.println("============== keySet() =============");
@@ -52,11 +50,12 @@ public class HashMapTest5 {
 		
 		for(String name : map.keySet()) {
 			if(name.equals("김희철"))
-				map.remove(name);
+				map.remove("김희철");
 		}
 		map.put("민경훈", 95);
 		
 		System.out.println(map);
 		
 	}
+
 }
