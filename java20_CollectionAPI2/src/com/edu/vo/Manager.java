@@ -4,7 +4,7 @@ public class Manager extends Employee{
 	
 	String dept;
 
-	public Manager(String empId, String name, String addr, int salary,String dept) {
+	public Manager(int empId, String name, String addr, int salary,String dept) {
 		super(empId,name,addr,salary);
 		this.dept = dept;
 	}

@@ -1,14 +1,14 @@
 package com.edu.vo;
 //Super Class...
-public class Employee implements Comparable<Employee>{
-	String empId;
+public class Employee {
+	int empId;
 	String name;
 	String addr;
 	int salary;
 	
 	public Employee() {	}
 	
-	public Employee(String empId, String name, String addr, int salary) {
+	public Employee(int empId, String name, String addr, int salary) {
 		super();
 		this.empId = empId;
 		this.name = name;
@@ -16,7 +16,7 @@ public class Employee implements Comparable<Employee>{
 		this.salary = salary;
 	}
 
-	public String getEmpId() {
+	public int getEmpId() {
 		return empId;
 	}
 
@@ -33,7 +33,7 @@ public class Employee implements Comparable<Employee>{
 	}
 	
 	
-	public void setEmpId(String empId) {
+	public void setEmpId(int empId) {
 		this.empId = empId;
 	}
 
@@ -53,13 +53,7 @@ public class Employee implements Comparable<Employee>{
 	public String toString() {
 		return "Employee [empId=" + empId + ", name=" + name + ", addr=" + addr
 				+ ", salary=" + salary + "]";
-	}
-
-	@Override
-	public int compareTo(Employee e) {
-		return empId.compareTo(e.getEmpId());
-	}
-
+	}		
 }
 
 

@@ -4,7 +4,7 @@ public class Engineer extends Employee{
 	String tech;
 	int bonus;
 	
-	public Engineer(String empId, String name, String addr, int salary,String tech, int bonus) {
+	public Engineer(int empId, String name, String addr, int salary,String tech, int bonus) {
 		super(empId,name,addr,salary);
 		this.tech = tech;
 		this.bonus = bonus;

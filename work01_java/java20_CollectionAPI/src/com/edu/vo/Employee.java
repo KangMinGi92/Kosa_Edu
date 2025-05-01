@@ -1,53 +1,68 @@
 package com.edu.vo;
-
-
-public class Employee implements Comparable<Employee>{
-	private int empNo;
-	private String name;
-	private Double salary;
-
-//	public Employee() {}
-
-	public Employee (int empNo, String name, double salary) {
-		this.empNo = empNo;
+//Super Class...
+public class Employee {
+	int empId;
+	String name;
+	String addr;
+	int salary;
+	
+	public Employee() {	}
+	
+	public Employee(int empId, String name, String addr, int salary) {
+		super();
+		this.empId = empId;
 		this.name = name;
+		this.addr = addr;
 		this.salary = salary;
 	}
 
-	public int getEmpNo() {
-		return empNo;
+	public int getEmpId() {
+		return empId;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public double getSalary() {
-		return salary;
+	public String getAddr() {
+		return addr;
 	}
 
-	public void setEmpNo(int empNo) {
-		this.empNo = empNo;
+	public int getSalary() {
+		return salary;
+	}
+	
+	
+	public void setEmpId(int empId) {
+		this.empId = empId;
 	}
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public void setSalary(double salary) {
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+
+	public void setSalary(int salary) {
 		this.salary = salary;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [empNo=" + empNo + ", name=" + name + ", salary=" + salary + "]";
-	}
-
-	@Override
-	public int compareTo(Employee e) {
-		return -Double.compare(salary, e.getSalary()); // 디폴트는 오름차순이고 , -붙여 음수를 반환하면 내림차순정렬
-	}
-
-
-
+		return "Employee [empId=" + empId + ", name=" + name + ", addr=" + addr
+				+ ", salary=" + salary + "]";
+	}		
 }
+
+
+
+
+
+
+
+
+
+
+
