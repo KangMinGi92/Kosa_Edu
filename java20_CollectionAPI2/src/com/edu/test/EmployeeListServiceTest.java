@@ -46,6 +46,7 @@ public class EmployeeListServiceTest {
 		service.deleteEmployee(112);
 		}catch(RecordNotFoundException e) {
 			System.err.println(e.getMessage());
+//			e.printStackTrace();  오류라인 및 오류정보를 세세하게 나타내주지만, 보안에 취약하여 사용하지 않는다.
 		}
 		ArrayList<Employee> emps=service.findEmployees("방배동");
 		System.out.println(emps);
