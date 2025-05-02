@@ -5,15 +5,11 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int a = sc.nextInt();
-		for(int i=1;i<a;i++) {
-			System.out.println("*");
-			for(int j=1;j<=i;j++) {
-				System.out.print("*");
-			}
+			int a = sc.nextInt();
+			int b = sc.nextInt();
+			if (a > 0 && b > 0 && a < 10 && b < 10) {
+				System.out.println(a + b);
 		}
-		System.out.print("*");
 	}// main
 }// class
-
 
