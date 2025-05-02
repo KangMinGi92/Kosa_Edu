@@ -1,6 +1,5 @@
 package com.edu.parent;
 
-import java.time.LocalDate;
 
 /*
  	Interface -> abstract method 로만 구성
