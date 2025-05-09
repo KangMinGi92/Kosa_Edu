@@ -11,28 +11,70 @@ public class Main {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringBuilder sb = new StringBuilder();
 		String str = br.readLine();
-		char[] chars = str.toCharArray();
-		for (Character c : chars) {
-			if (Character.isUpperCase(c)) {
-				sb.append(Character.toLowerCase(c));
-			} else {
-				sb.append(Character.toUpperCase(c));
-			}
+		double d = 0;
+		switch (str) {
+		case "A+":
+			d = 4.3;
+			break;
+		case "A0":
+			d = 4.0;
+			break;
+		case "A-":
+			d = 3.7;
+			break;
+		case "B+":
+			d = 3.3;
+			break;
+		case "B0":
+			d = 3.0;
+			break;
+		case "B-":
+			d = 2.7;
+			break;
+		case "C+":
+			d = 2.3;
+			break;
+		case "C0":
+			d = 2.0;
+			break;
+		case "C-":
+			d = 1.7;
+			break;
+		case "D+":
+			d = 1.3;
+			break;
+		case "D0":
+			d = 1.0;
+			break;
+		case "D-":
+			d = 0.7;
+			break;
+		default:
+			d = 0.0;
 		}
-		bw.write(sb.toString());
+		bw.write(String.valueOf(d));
 		bw.flush();
 		bw.close();
 	}// main
 }// class
 
 /*
- * 영어 소문자와 대문자로 이루어진 단어를 입력받은 뒤, 대문자는 소문자로, 소문자는 대문자로 바꾸어 출력하는 프로그램을 작성하시오.
+ * 어떤 사람의 C언어 성적이 주어졌을 때, 평점은 몇 점인지 출력하는 프로그램을 작성하시오.
  * 
- * 입력 첫째 줄에 영어 소문자와 대문자로만 이루어진 단어가 주어진다. 단어의 길이는 최대 100이다.
+ * A+: 4.3, A0: 4.0, A-: 3.7
  * 
- * 출력 첫째 줄에 입력으로 주어진 단어에서 대문자는 소문자로, 소문자는 대문자로 바꾼 단어를 출력한다.
+ * B+: 3.3, B0: 3.0, B-: 2.7
+ * 
+ * C+: 2.3, C0: 2.0, C-: 1.7
+ * 
+ * D+: 1.3, D0: 1.0, D-: 0.7
+ * 
+ * F: 0.0
+ * 
+ * 입력 첫째 줄에 C언어 성적이 주어진다. 성적은 문제에서 설명한 13가지 중 하나이다.
+ * 
+ * 출력 첫째 줄에 C언어 평점을 출력한다.
  * 
  */
 // throws IOException 던져야 사용가능하다.
