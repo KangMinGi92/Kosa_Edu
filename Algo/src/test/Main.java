@@ -5,78 +5,52 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		String str = br.readLine();
-		double d = 0;
-		switch (str) {
-		case "A+":
-			d = 4.3;
-			break;
-		case "A0":
-			d = 4.0;
-			break;
-		case "A-":
-			d = 3.7;
-			break;
-		case "B+":
-			d = 3.3;
-			break;
-		case "B0":
-			d = 3.0;
-			break;
-		case "B-":
-			d = 2.7;
-			break;
-		case "C+":
-			d = 2.3;
-			break;
-		case "C0":
-			d = 2.0;
-			break;
-		case "C-":
-			d = 1.7;
-			break;
-		case "D+":
-			d = 1.3;
-			break;
-		case "D0":
-			d = 1.0;
-			break;
-		case "D-":
-			d = 0.7;
-			break;
-		default:
-			d = 0.0;
-		}
-		bw.write(String.valueOf(d));
-		bw.flush();
-		bw.close();
-	}// main
+    public static void main(String[] args) throws IOException {
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        boolean flag = true;
+        while (flag) {
+            String[] arr = br.readLine().split(" ");
+            if (arr[0].equals("0")) {
+                flag = false;
+            } else {
+                Integer[] iarr = new Integer[arr.length];
+                for (int i = 0; i < arr.length; i++) {
+                    iarr[i] = Integer.valueOf(arr[i]);
+                }
+				Arrays.sort(iarr);
+                boolean con = test(iarr[0], iarr[1], iarr[2]);
+                if (con) {
+                    bw.write("right\n");
+                } else {
+                    bw.write("wrong\n");
+                }
+            }
+        }
+        bw.flush();
+        bw.close();
+    }// main
+
+    private static boolean test(int a, int b, int c) {
+        boolean flag = (a * a) + (b * b) == (c * c);
+        return flag;
+    }
 }// class
 
 /*
- * 어떤 사람의 C언어 성적이 주어졌을 때, 평점은 몇 점인지 출력하는 프로그램을 작성하시오.
+ * 과거 이집트인들은 각 변들의 길이가 3, 4, 5인 삼각형이 직각 삼각형인것을 알아냈다. 주어진 세변의 길이로 삼각형이 직각인지 아닌지
+ * 구분하시오.
  * 
- * A+: 4.3, A0: 4.0, A-: 3.7
+ * 입력 입력은 여러개의 테스트케이스로 주어지며 마지막줄에는 0 0 0이 입력된다. 각 테스트케이스는 모두 30,000보다 작은 양의 정수로
+ * 주어지며, 각 입력은 변의 길이를 의미한다.
  * 
- * B+: 3.3, B0: 3.0, B-: 2.7
- * 
- * C+: 2.3, C0: 2.0, C-: 1.7
- * 
- * D+: 1.3, D0: 1.0, D-: 0.7
- * 
- * F: 0.0
- * 
- * 입력 첫째 줄에 C언어 성적이 주어진다. 성적은 문제에서 설명한 13가지 중 하나이다.
- * 
- * 출력 첫째 줄에 C언어 평점을 출력한다.
- * 
+ * 출력 각 입력에 대해 직각 삼각형이 맞다면 "right", 아니라면 "wrong"을 출력한다.
  */
+
 // throws IOException 던져야 사용가능하다.
 //        // 빠른 입력
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
