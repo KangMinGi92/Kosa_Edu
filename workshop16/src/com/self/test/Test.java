@@ -17,20 +17,19 @@ public class Test {
 		);
 		System.out.println("\n====1. 직원 급여를 15% 인상한 정보를 출력 :: forEach 사용====");
 		list.forEach(e->{
-			e.setSalary(e.getSalary()*1.15);
+			e.setSalary(e.getSalary()+e.getSalary()*0.15);
 			System.out.println(e);
 		});
 //		Consumer 함수형 인터페이스 구현방식으로 각 직원 급여의 15% 인상분을
 //		구현하고 raiseSalary 함수에서 해당 인터페이스 함수를 호출한다.
 		System.out.println("\n====2. 직원 급여를 15% 인상한 정보를 출력 :: Consumer로 구현====");
-		Consumer<Employee> consumer=(i)->System.out.println(i);
-		raiseSalary(list,consumer);
+		Consumer<Employee> consumer=e->e.setSalary(e.getSalary()+e.getSalary()*0.15);
+		raiseSalary(list,consumer.andThen(System.out::println));
 		
 	}//main
 	private static void raiseSalary(List<Employee> emps,Consumer<Employee> c) {
-		for(Employee e : emps) {
-			e.setSalary(e.getSalary()*1.15);
+		for(Employee e : emps) 
 			c.accept(e);
-		}
+		
 	}
 }//class
